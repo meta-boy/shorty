@@ -8,6 +8,7 @@ class ShortyApplicationTests {
 
 	@Test
 	fun contextLoads() {
+
 	}
 
 }

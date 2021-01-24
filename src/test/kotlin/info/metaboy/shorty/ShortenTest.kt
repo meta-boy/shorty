@@ -9,11 +9,15 @@ import org.springframework.boot.test.web.client.postForObject
 
 import org.springframework.http.HttpEntity
 import java.net.URI
+import java.util.logging.Level
+import java.util.logging.Logger
 
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ShortenTest( @Autowired val restTemplate: TestRestTemplate) {
+
     @Test
-    fun `Shorten URL, check status code`() {
+    fun `Shorten URL, check for content`() {
+
         val urlJsonObject = JSONObject()
         urlJsonObject.put("url", "https://www.google.com/")
         val request = HttpEntity<String>(urlJsonObject.toString())
